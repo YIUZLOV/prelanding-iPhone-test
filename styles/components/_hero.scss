@@ -1,0 +1,146 @@
+@use '../helpers' as *;
+
+.hero {
+  background: var(--color-gray);
+  background: var(--gradient-desktop);
+  text-align: center;
+
+  &__container {
+    padding-block: rem(50);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: rem(20);
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 
+      'title title'
+      'subtitle subtitle'
+      'image timer'
+      'image button';
+      gap: rem(10);
+    }
+
+    @include mobile {
+      padding-block: rem(10) rem(20);
+      grid-template-columns: 100%;
+      grid-template-areas: 
+        'title'
+        'subtitle'
+        'image' 
+        'timer'
+        'button';
+    }
+  }
+
+  &__image {
+    width: 50%;
+    max-width: rem(600);
+    animation: animationImage 1s ease-in-out infinite;
+
+    @include tablet {
+      grid-area: image;
+      width: 100%;
+      justify-self: center;
+    }
+  }
+
+  &__content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(40);
+    color: var(--color-light);
+
+    @include tablet {
+      display: contents;
+    }
+
+    &__title {
+      @include fluid-text(72, 36);
+
+      font-family: var(--font-family-accent);
+      font-weight: 900;
+      color: var(--color-gold);
+      text-transform: uppercase;
+
+      @include tablet {
+        grid-area: title;
+      }
+    }
+
+    &__subtitle {
+      @include fluid-text(34, 22);
+
+      font-weight: 600;
+      text-wrap: balance;
+
+      @include tablet {
+        grid-area: subtitle;
+      }
+    }
+
+    &__timer {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: rem(20);
+      font-size: rem(26);
+
+      @include tablet {
+        grid-area: timer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: rem(10);
+      }
+
+      @include mobile {
+        font-size: rem(22);
+      }
+
+      & p:last-child {
+        color: var(--color-gold);
+        font-weight: 600;
+        font-size: rem(30);
+
+        @include mobile {
+        font-size: rem(26);
+      }
+      }
+    }
+
+    &__button {
+      width: rem(350);
+      height: rem(70);
+      border: none;
+      background-color: var(--color-gold);
+      border-radius: rem(25);
+      color: var(--color-dark);
+      font-size: rem(20);
+      font-weight: 900;
+      text-transform: uppercase;
+      animation: animationButton 0.5s infinite alternate linear;
+      animation-fill-mode: backwards;
+
+      @include tablet {
+        grid-area: button;
+        justify-self: center;
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: var(--color-gray);
+        color: var(--color-light);
+        animation: none;
+      }
+    }
+  }
+}

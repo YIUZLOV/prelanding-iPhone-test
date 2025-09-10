@@ -1,0 +1,29 @@
+@use 'helpers' as *;
+
+:root {
+  --color-gold: #ffd700;
+  --color-dark: #000000;
+  --color-gray: #757575;;
+  --color-light: #ffffff;
+
+
+  
+
+  --gradient-desktop: linear-gradient(135deg,rgba(87, 87, 87, 1) 0%, rgba(66, 66, 66, 1) 21%, rgba(0, 0, 0, 1) 99%);;
+
+  --border: #{rem(1)} solid var(--color-dark-15);
+
+  --shadow: 0 0 0 #{rem(3)} #191919;
+
+  --font-family-base: 'Montserrat', sans-serif;
+  --font-family-accent: 'Merriweather Sans', sans-serif;
+
+  --container-width: #{rem(1600)};
+  --container-padding-x: #{rem(16)};
+
+  --transition-duration: 0.2s;
+
+  @include laptop {
+    --container-width: #{rem(1280)};
+  }
+}

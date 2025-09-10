@@ -1,0 +1,46 @@
+@use '../helpers' as *;
+
+
+.header {
+  width: 100%;
+  height: rem(50);
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+
+  @include mobile {
+    height: rem(30);
+  }
+  
+  &__content {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    @include mobile {
+      justify-content: center;
+    }
+
+    &__logo {
+      display: flex;
+      flex-direction: row;
+      gap: rem(5);
+      font-family: var(--font-family-base);
+      font-size: rem(20);
+
+      @include mobile {
+        font-size: rem(16);
+      }
+      
+
+      & span:first-child {
+        font-size: rem(22);
+        font-weight: 900;
+
+        @include mobile {
+          font-size: rem(18);
+        }
+      }
+    }
+  }
+}

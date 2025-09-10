@@ -1,0 +1,21 @@
+@keyframes animationButton {
+  from {
+    box-shadow: none; 
+  }
+
+  to {
+    box-shadow: 0px 0px 9px 4px var(--color-gold);
+  }
+}
+
+@keyframes animationImage {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.166);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
